@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cyan_normal">#00E5FF</color>
+    <color name="cyan_light">#18FFFF</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#E9E9E9</color>
+    <color name="colorPrimary">#FB8C00</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorAccent">#009688</color>
+    <color name="transparent">#00000000</color>
+
+
+    <!-- Camera -->
+    <color name="result_view">#b0000000</color>
+    <color name="result_points">#c099cc00</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffbd21</color>
+    <color name="status_text">#ffffffff</color>
+
+</resources>

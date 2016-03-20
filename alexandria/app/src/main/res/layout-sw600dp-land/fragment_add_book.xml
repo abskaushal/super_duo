@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2" />
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="left|bottom">
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:layout_marginLeft="@dimen/dimen_10"
+                android:layout_marginRight="@dimen/dimen_10"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_10"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:id="@+id/eancontainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ean"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_hint"
+                        android:inputType="number"
+                        android:maxLength="@integer/ean_size"
+                        android:maxLines="1"
+                        android:minEms="@integer/ean_width"
+                        android:paddingLeft="@dimen/dimen_10"
+                        android:paddingRight="@dimen/dimen_20"
+                        android:paddingStart="@dimen/dimen_10" />
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/scan_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/scan_bg"
+                android:paddingEnd="@dimen/dimen_40"
+                android:paddingLeft="@dimen/dimen_40"
+                android:paddingRight="@dimen/dimen_40"
+                android:paddingStart="@dimen/dimen_40"
+                android:text="@string/scan_button"
+                android:textColor="@color/black"
+                android:textSize="@dimen/medium_fontsize" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="@dimen/dimen_30"
+                android:layout_height="@dimen/dimen_30"
+                android:layout_below="@+id/scan"
+                android:layout_marginLeft="@dimen/dimen_30"
+                android:layout_marginStart="@dimen/dimen_30"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_toEndOf="@+id/scan_button"
+                android:layout_toRightOf="@+id/scan_button"
+                android:visibility="invisible" />
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/book_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scan_button"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:layout_marginLeft="@dimen/dimen_10"
+                android:layout_marginRight="@dimen/dimen_10"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:visibility="gone"
+                card_view:cardCornerRadius="1dp"
+                card_view:cardUseCompatPadding="true">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/cover"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_book" />
+
+
+                    <TextView
+                        android:id="@+id/bookTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_marginStart="@dimen/dimen_10"
+                        android:layout_toEndOf="@+id/cover"
+                        android:layout_toRightOf="@+id/cover"
+                        android:text="@string/title_activity_capture"
+                        android:textIsSelectable="true"
+                        android:textSize="@dimen/large_fontsize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/bookSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bookTitle"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_marginTop="@dimen/dimen_10"
+                        android:layout_toEndOf="@+id/cover"
+                        android:layout_toRightOf="@+id/cover"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:text="@string/title_activity_capture" />
+
+                    <TextView
+                        android:id="@+id/authors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/bookSubTitle"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_marginStart="@dimen/dimen_10"
+                        android:layout_marginTop="@dimen/dimen_20"
+                        android:layout_toEndOf="@+id/cover"
+                        android:layout_toRightOf="@+id/cover"
+                        android:gravity="end"
+                        android:text="@string/title_activity_capture"
+                        android:textSize="@dimen/small_fontsize" />
+
+                    <TextView
+                        android:id="@+id/categories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bookSubTitle"
+                        android:layout_marginLeft="@dimen/dimen_10"
+                        android:layout_marginStart="@dimen/dimen_10"
+                        android:layout_marginTop="@dimen/dimen_20"
+                        android:layout_toEndOf="@+id/cover"
+                        android:layout_toRightOf="@+id/cover"
+                        android:text="@string/title_activity_capture"
+                        android:textSize="@dimen/small_fontsize" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_below="@+id/categories"
+                        android:layout_marginTop="@dimen/dimen_20">
+
+                        <Button
+                            android:id="@+id/delete_button"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/dimen_30"
+                            android:layout_marginRight="@dimen/dimen_30"
+                            android:layout_toLeftOf="@+id/view"
+                            android:layout_toStartOf="@+id/view"
+
+                            android:drawableLeft="@drawable/ic_action_discard"
+                            android:text="@string/cancel_button" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true" />
+
+                        <Button
+                            android:id="@+id/save_button"
+                            style="?android:attr/buttonBarButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dimen_30"
+                            android:layout_marginStart="@dimen/dimen_30"
+                            android:layout_toEndOf="@+id/view"
+                            android:layout_toRightOf="@+id/view"
+
+                            android:drawableLeft="@drawable/ic_action_accept"
+                            android:text="@string/ok_button" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"></LinearLayout>
+
+</LinearLayout>
